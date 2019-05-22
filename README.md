@@ -1,5 +1,5 @@
 # PanoramaCreator
-Drag and Drop panorama creator written with C++, Qt, OpenCV 
+Drag and Drop panorama creator written in C++ with Qt, OpenCV 
 
 ### OpenCV build and installation to separate folder on Ubuntu 18.04 LTS
 
@@ -17,7 +17,7 @@ mkdir opencv_sourses_build
 cd opencv_sourses_build
 mkdir build opencv_with_contrib_3.4.6
 
-git clone https://github. com/opencv/opencv.git
+git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 
 cd opencv
@@ -29,7 +29,7 @@ git checkout 3.4.6
 
 #### OpenCV build to dir
 
-You can replace `~/` with you exact path
+You should replace `~/` with your exact path
 ```
 cd ../build
 
@@ -60,15 +60,13 @@ make -j4
 #### Add to your CMakeLists.txt
 Please take a look at the example in https://github.com/AdoreIt/PanoramaCreator/tree/master/test_project
 ```
+... 
+
 find_package(OpenCV 3.4.6 REQUIRED)
 
-...
-
 target_link_libraries(opencv_test
-	PRIVATE ${OpenCV_LIBS}
-	)
+	PRIVATE ${OpenCV_LIBS})
 
 target_include_directories(opencv_test
-	PRIVATE ${OpenCV_INCLUDE_DIRS}
-	)
+	PRIVATE ${OpenCV_INCLUDE_DIRS})
 ```
