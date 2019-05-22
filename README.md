@@ -42,7 +42,7 @@ make install -j4
 ```
 
 #### Add to path to be able to find_package
-Test example in https://github.com/AdoreIt/PanoramaCreator/test_project
+Test example in https://github.com/AdoreIt/PanoramaCreator/tree/master/test_project
 ```
 cd ..
 mkdir -p test_project/build
@@ -58,7 +58,7 @@ make -j4
 ```
 
 #### Add to your CMakeLists.txt
-Please take a look at the example in https://github.com/AdoreIt/PanoramaCreator/test_project
+Please take a look at the example in https://github.com/AdoreIt/PanoramaCreator/tree/master/test_project
 ```
 find_package(OpenCV 3.4.6 REQUIRED)
 
