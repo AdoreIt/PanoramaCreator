@@ -34,9 +34,11 @@ You should replace `~/` with your exact path
 cd ../build
 
 cmake \
--DCMAKE_INSTALL_PREFIX=~/opencv_sourses_build/opencv_with_contrib_3.4.6 \
--DOPENCV_EXTRA_MODULES_PATH=~/opencv_sourses_build/opencv_contrib/modules \
--DWITH_IPP=OFF -DWITH_CUDA=OFF -DBUILD_opencv_java=OFF ../opencv
+-DCMAKE_INSTALL_PREFIX=/home/natalie/Software/opencv_with_contrib_3.4.6 \
+-DOPENCV_EXTRA_MODULES_PATH=/home/natalie/Distrib/opencv_3.4.6_sourses_and_build/opencv_contrib/modules \
+-DWITH_IPP=OFF -DWITH_CUDA=OFF -DBUILD_opencv_java=OFF \
+-DOPENCV_ENABLE_NONFREE:BOOL=ON \
+ ../opencv 
 
 make install -j4
 ```
@@ -48,9 +50,9 @@ cd ..
 mkdir -p test_project/build
 cd test_project/build
 
-export LD_LIBRARY_PATH=~/opencv_sourses_build/opencv_with_contrib_3.4.6/lib
-export CMAKE_PREFIX_PATH=~/opencv_sourses_build/opencv_with_contrib_3.4.6
-export PKG_CONFIG_PATH=~/opencv_sourses_build/opencv_with_contrib_3.4.6/lib/pkgconfig
+export LD_LIBRARY_PATH=/home/natalie/Software/opencv_with_contrib_3.4.6/lib
+export CMAKE_PREFIX_PATH=/home/natalie/Software/opencv_with_contrib_3.4.6
+export PKG_CONFIG_PATH=/home/natalie/Software/opencv_with_contrib_3.4.6/lib/pkgconfig
 
 cmake ..
 make -j4
