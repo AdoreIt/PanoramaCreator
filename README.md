@@ -72,3 +72,27 @@ target_link_libraries(opencv_test
 target_include_directories(opencv_test
 	PRIVATE ${OpenCV_INCLUDE_DIRS})
 ```
+
+
+### RapidJSON build and installation to separate folder on Ubuntu 18.04 LTS
+
+```
+git clone https://github.com/Tencent/rapidjson.git
+cd rapidjson && mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=/home/natalie/Software/rapidjson ..
+make install -j4
+```
+
+#### Add to path to be able to find_package
+```
+export CMAKE_PREFIX_PATH=/home/natalie/Software/rapidjson && \
+export PKG_CONFIG_PATH=/home/natalie/Software/rapidjson/lib/pkgconfig
+```
+
+#### Add to your CMakeLists.txt
+```
+find_package(RapidJSON)
+
+target_include_directories(your_project_name
+    PRIVATE ${RapidJSON_INCLUDE_DIR})
+```

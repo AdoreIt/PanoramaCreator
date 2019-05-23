@@ -13,10 +13,12 @@ file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 add_executable(panorama_creator ${SOURCES})
 
 find_package(OpenCV 3.4.6 REQUIRED)
+find_package(RapidJSON REQUIRED)
 
 target_link_libraries(panorama_creator
     PRIVATE ${OpenCV_LIBS})
     
 target_include_directories(panorama_creator
+    PRIVATE ${RapidJSON_INCLUDE_DIR}
     PRIVATE ${OpenCV_INCLUDE_DIRS}
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
