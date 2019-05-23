@@ -19,7 +19,16 @@ std::vector<cv::Mat> CSimpleStitcher::readImages(
     std::vector<cv::Mat> images;
     for (const std::string& image_path : images_pathes)
     {
-        images.push_back(cv::imread(image_path));
+        cv::Mat image = cv::imread(image_path);
+        if (image.data != NULL)
+        {
+            images.push_back(cv::imread(image_path));
+        }
+        else
+        {
+            std::cout << "Image read error: "
+                      << "Path " + image_path + " is not valid\n";
+        }
     }
     return images;
 }
