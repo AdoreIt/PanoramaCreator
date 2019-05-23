@@ -9,15 +9,15 @@ int main()
     SimpleStitcher::CSimpleStitcher stitcher;
 
     cv::Mat panorama;
-    /// home/natalie/AdoreIT/PanoramaCreator/images/1.jpg
+
     if (stitcher.stitch(
             stitcher.readImages(std::vector<std::string>{
-                "/home/natalie/AdoreIT/PanoramaCreator/images/1.jpg",
-                "/home/natalie/AdoreIT/PanoramaCreator/images/2.jpg"}),
+                "/home/natalie/AdoreIt/PanoramaCreator/images/1.jpg",
+                "/home/natalie/AdoreIt/PanoramaCreator/images/2.jpg"}),
             panorama))
     {
         stitcher.writeResult(
-            "/home/natalie/AdoreIT/PanoramaCreator/images/result.jpg",
+            "/home/natalie/AdoreIt/PanoramaCreator/images/result.jpg",
             panorama);
     }
 

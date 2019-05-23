@@ -35,7 +35,7 @@ cd ../build
 
 cmake \
 -DCMAKE_INSTALL_PREFIX=/home/natalie/Software/opencv_with_contrib_3.4.6 \
--DOPENCV_EXTRA_MODULES_PATH=/home/natalie/Distrib/opencv_3.4.6_sourses_and_build/opencv_contrib/modules \
+-DOPENCV_EXTRA_MODULES_PATH=/home/natalie/Distrib/opencv_sourses_build/opencv_contrib/modules \
 -DWITH_IPP=OFF -DWITH_CUDA=OFF -DBUILD_opencv_java=OFF \
 -DOPENCV_ENABLE_NONFREE:BOOL=ON \
  ../opencv 
